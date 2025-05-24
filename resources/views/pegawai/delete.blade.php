@@ -17,6 +17,7 @@
         text-decoration: none;
         padding: 5px 10px;
         border: 1px solid;
+        border-radius: 5px;
         color: rgb(236, 235, 234);
     }
     button {
@@ -24,11 +25,13 @@
         text-decoration: none;
         padding: 10px 10px;
         border: 1px solid;
+        border-radius:5px; 
         color: rgb(236, 235, 234);
     }
     </style>
 </head>
 <body>
+
     <h1>Hapus data pegawai</h1>
     <p>Apakah anda ingin menghapus data pegawai dengan nama: {{ $pegawai->nama}}</p>
     <form action="/pegawai/{{ $pegawai->id }}" method="POST">
@@ -40,6 +43,6 @@
             Yakin
         </button>
     </div>
-    </form>
+
 </body>
 </html>

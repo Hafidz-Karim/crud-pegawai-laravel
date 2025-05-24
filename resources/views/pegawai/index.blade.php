@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
-
         .wrapper a {
             padding: 10px 5px 5px 5px;
-            background-color: rgb(60, 60, 245);
+            background-color: rgb(9, 188, 24);
             color: #f2f2f2;
             text-decoration: none;
             border-radius: 3px;
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -45,16 +45,17 @@
 <body>
     <h1>Data Pegawai</h1>
     <div class="wrapper">
-        <a href="/pegawai/create" style="width: 5%" >Buat baru</a>
+        <a href="/pegawai/create" style="width: 6%">Buat baru</a>
         <table>
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
                     <th>Alamat</th>
-                    <th>Umur</th>
-                    <th>Gaji</th>
-                    <th>No Hp</th>
+                    <th>Nomor telephone</th>
+                    <th>Tanggal lahir</th>
+                    <th>Tempat lahir</th>
+                    <th>Jabatan</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -64,14 +65,18 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $pegawai->nama }}</td>
                         <td>{{ $pegawai->alamat }}</td>
-                        <td>{{ $pegawai->umur }}</td>
-                        <td>{{ number_format($pegawai->gaji, 0, '.', '.') }}</td>
-                        <td>{{ $pegawai->phone }}</td>        
+                        <td>{{ $pegawai->no_phone }}</td>
+                        <td>{{ $pegawai->tanggal_lahir }}</td>
+                        <td>{{ $pegawai->tempat_lahir }}</td>
+                        <td>{{ $pegawai->jabatan }}</td>
                         <td>
-                            <a href="/pegawai/{{ $pegawai->id }}">Detail</a>
-                            <a href="/pegawai/{{ $pegawai->id }}/edit">Edit</a>
-                            <a href="/pegawai/{{ $pegawai->id }}/delete">Delete</a>
-                        </td>       
+                            {{-- <a href="/pegawai/{{ $pegawai->id }}">Detail</a> --}}
+                            <div style="display: flex">
+                                <a href="/pegawai/{{ $pegawai->id }}/edit" style="background-color: orange ">Edit</a>
+                                <a href="/pegawai/{{ $pegawai->id }}/delete" style="background-color: red">Delete</a>
+                            </div>
+                          
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

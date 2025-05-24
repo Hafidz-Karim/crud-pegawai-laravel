@@ -12,11 +12,11 @@ class PegawaiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-        $pegawais = Pegawai::all();
-       return view('pegawai.index', compact('pegawais'));
-    }
+        {
+            //
+            $pegawais = Pegawai::all();
+        return view('pegawai.index', compact('pegawais'));
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -36,10 +36,10 @@ class PegawaiController extends Controller
         $pegawai_baru = new Pegawai();
         $pegawai_baru->nama = $request->nama;
         $pegawai_baru->alamat = $request->alamat;
-        $pegawai_baru->gaji = $request->gaji;
-        $pegawai_baru->umur = $request->umur;
-        $pegawai_baru->phone = $request->phone;
-        $pegawai_baru->keterangan = $request->keterangan;
+        $pegawai_baru->no_phone = $request->no_phone;
+        $pegawai_baru->tanggal_lahir = $request->tanggal_lahir;
+        $pegawai_baru->tempat_lahir = $request->tempat_lahir;
+        $pegawai_baru->jabatan = $request->jabatan;
         $pegawai_baru->save();
         return redirect("/pegawai/$pegawai_baru->id");
     }

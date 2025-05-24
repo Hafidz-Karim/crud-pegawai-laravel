@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use Faker\Provider\bg_BG\PhoneNumber;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,12 +18,12 @@ class PegawaiFactory extends Factory
     {
         return [
             //
-            "nama" => $this->faker->name(),
-            "alamat" => $this->faker->address(),
-            "umur" => $this->faker->numberBetween(25, 40),
-            "gaji" => $this->faker->numberBetween(3000000, 7000000),
-            "phone" => $this->faker->PhoneNumber(),
-            "keterangan" => $this->faker->text()
+            "nama" => $this->faker->name,
+            "alamat" => $this->faker->address,
+            "no_phone" => $this->faker->phoneNumber,
+            "tanggal_lahir" => $this->faker->date,
+            "tempat_lahir" => $this->faker->city,
+            "jabatan" => $this->faker->word()
         ];
     }
 }

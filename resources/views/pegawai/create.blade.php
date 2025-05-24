@@ -34,6 +34,7 @@
     <form action="/pegawai" method="POST">
         @csrf
         <div class="wrapper">
+            <h1>Buat data pegawai baru</h1>
             <div>
                 <label for="nama">Nama: <span style="color: red; font-weight: bold">*</span></label>
                 <input type="text" id="nama" name="nama" value="{{ old('nama') }}">
@@ -49,29 +50,34 @@
             @enderror
             </div>
             <div>
-                <label for="umur">Umur: <span style="color: red; font-weight: bold">*</span></label>
-                <input type="text" id="umur" name="umur" value="{{ old('umur') }}">
-                @error('umur')
+                <label for="no_telephone">Nomor telephone: <span style="color: red; font-weight: bold">*</span></label>
+                <input type="text" id="no_telephone" name="no_telephone" value="{{ old('tanggal_lahir') }}">
+                @error('no_telephone')
                 <p>{{ $message }}</p>
             @enderror
             </div>
             <div>
-                <label for="gaji">Gaji:</label>
-                <input type="text" id="gaji" name="gaji"  value="{{ old('gaji') }}">
-                @error('gaji')
+                <label for="tanggal_lahir">Tanggal lahir:</label>
+                <input type="text" id="tanggal_lahir" name="tanggal_lahir"  value="{{ old('tanggal_lahir') }}">
+                @error('tanggal_lahir')
                 <p>{{ $message }}</p>
             @enderror
             </div>
-            <div>
+            {{-- <div>
                 <label for="phone">Phone</label>
                 <input type="text" id="phone" name="phone" value="{{ old('phone') }}">
                 @error('phone')
                 <p>{{ $message }}</p>
             @enderror
+            </div> --}}
+            <div>
+                <label for="tempat_lahir">Tempat lahir</label>
+                <input type="text" id="tempat_lahir" name="tempat_lahir" value="{{ old('tempat_lahir') }}">
+                </textarea>
             </div>
             <div>
-                <label for="keterangan">Keterangan</label>
-                <textarea cols="4" type="text" id="keterangan" name="keterangan">
+                <label for="jabatan">Jabatan</label>
+                <input type="text" id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
                 </textarea>
             </div>
             <button type="submit">Simpan</button>

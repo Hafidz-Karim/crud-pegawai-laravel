@@ -37,6 +37,7 @@
         @csrf
         @method('PUT')
         <div class="wrapper">
+            <h1>Edit data Pegawai</h1>
             <div>
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" name="nama" value="{{ $pegawai->nama }}" required>

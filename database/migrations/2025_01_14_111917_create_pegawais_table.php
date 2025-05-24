@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('pegawais', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('alamat');
-            $table->integer('umur');
-            $table->decimal('gaji')->default(3000000);
-            $table->string('phone')->unique();
-            $table->text('keterangan')->nullable();
+            $table->text('alamat');
+            $table->string('no_phone');
+            $table->date('tanggal_lahir');
+            $table->string('tempat_lahir');
+            $table->string('jabatan');
             $table->timestamps();
         });
     }
